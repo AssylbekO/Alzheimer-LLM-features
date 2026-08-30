@@ -1,0 +1,116 @@
+[
+  {
+    "proposed_features": [
+      {
+        "feature": "narrative_coherence",
+        "description": "Measures the logical flow and sentence structure of the description. One group tends to produce fragmented, telegraphic lists of observations (e.g., 'Dog chases squirrel. Bird on tree.'), while the other constructs connected sentences with conjunctions and temporal markers (e.g., 'The dog is chasing the squirrel which is climbing the tree').",
+        "possible_values": [
+          "fragmented_list",
+          "telegraphic_utterances",
+          "simple_sentences",
+          "connected_narrative",
+          "complex_discourse"
+        ]
+      },
+      {
+        "feature": "uncertainty_markers",
+        "description": "The frequency of expressions indicating doubt, hesitation, or lack of confidence in the observation (e.g., 'maybe', 'probably', 'I don't know', 'looks like'). This often correlates with a more spontaneous, unpolished reporting style versus a confident, definitive listing.",
+        "possible_values": [
+          "none",
+          "rare",
+          "occasional",
+          "frequent",
+          "dominant"
+        ]
+      },
+      {
+        "feature": "action_verb_tense_consistency",
+        "description": "Whether the speaker consistently uses the present tense for ongoing actions or frequently shifts between tenses and aspects (e.g., mixing 'is swimming' with 'swam' or using infinitive forms). One group may stick rigidly to the immediate visual present, while the other fluctuates.",
+        "possible_values": [
+          "strict_present",
+          "present_with_infinitives",
+          "mixed_tenses",
+          "past_interpretations",
+          "inconsistent_aspect"
+        ]
+      },
+      {
+        "feature": "entity_specificity_level",
+        "description": "The level of detail used to identify objects and characters. One group uses generic terms ('a man', 'a bird'), while the other attempts specific identification based on visual cues ('a man in blue shorts', 'a sparrow', 'a golden retriever').",
+        "possible_values": [
+          "generic_only",
+          "basic_attributes",
+          "descriptive_details",
+          "highly_specific",
+          "over_interpreted"
+        ]
+      },
+      {
+        "feature": "self_referential_metacommentary",
+        "description": "The presence of comments about the act of speaking or describing itself (e.g., 'That's all I see', 'I don't remember anymore', 'What do you want me to say?'). This indicates a meta-cognitive awareness of the task constraints.",
+        "possible_values": [
+          "absent",
+          "minimal",
+          "moderate",
+          "frequent",
+          "dominant"
+        ]
+      },
+      {
+        "feature": "spatial_organization_pattern",
+        "description": "How the description navigates the scene. Some speakers follow a strict spatial order (left-to-right, foreground-to-background), while others jump randomly between elements based on what catches their attention first.",
+        "possible_values": [
+          "random_jump",
+          "foreground_first",
+          "background_first",
+          "left_to_right",
+          "systematic_scan"
+        ]
+      },
+      {
+        "feature": "emotional_interpretation_inference",
+        "description": "The tendency to attribute internal states, emotions, or intentions to the subjects (e.g., 'the child is scared', 'the dog is happy', 'the woman is relaxing') versus strictly reporting observable physical actions.",
+        "possible_values": [
+          "purely_physical",
+          "minimal_inference",
+          "moderate_inference",
+          "high_inference",
+          "anthropomorphic_projection"
+        ]
+      },
+      {
+        "feature": "lexical_variation_and_repetition",
+        "description": "The diversity of vocabulary used. One group may repeat the same verbs and nouns (e.g., repeatedly saying 'chasing' or 'bird'), while the other uses synonyms and varied phrasing (e.g., 'pursuing', 'canine', 'avian').",
+        "possible_values": [
+          "high_repetition",
+          "low_variation",
+          "moderate_variation",
+          "high_variation",
+          "synonym_rich"
+        ]
+      },
+      {
+        "feature": "quantification_precision",
+        "description": "How numbers are handled when counting objects (ducks, birds, trees). One group gives exact counts immediately, another estimates ('a few', 'many'), and a third counts aloud with hesitations or corrections ('two, four, maybe six').",
+        "possible_values": [
+          "no_counting",
+          "estimates_only",
+          "exact_immediate",
+          "counting_with_hesitation",
+          "repeated_correction"
+        ]
+      },
+      {
+        "feature": "discourse_marker_usage",
+        "description": "The use of filler words and discourse connectors (e.g., 'well', 'so', 'and then', 'uh', 'jo', 'takže'). High usage often signals a conversational, stream-of-consciousness mode, whereas low usage suggests a more formal or rehearsed recitation.",
+        "possible_values": [
+          "none",
+          "sparse",
+          "moderate",
+          "frequent",
+          "excessive"
+        ]
+      }
+    ]
+  }
+]

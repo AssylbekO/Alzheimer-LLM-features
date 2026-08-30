@@ -1,0 +1,53 @@
+# --- Python virtual environment ---
+.venv/
+venv/
+env/
+
+# --- Secrets / local configuration ---
+.env
+*.env
+!.env.example
+
+# --- Python bytecode / build ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# --- Generated data / results ---
+# Extracted copies of the tracked dataset archives (fileDataset.zip)
+/overview/
+/train/
+/test/
+/fileDataset/
+notebooks_preliminary/fileDataset/
+notebooks_preliminary/overview/
+notebooks_preliminary/train/
+notebooks_preliminary/test/
+
+# Notebook run outputs (OutputsQwen/ is kept: it is committed input data)
+outputs/
+*/outputs/
+llmlite_quickstart_results.csv
+v2_raw.jsonl
+run_metadata.json
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/

@@ -1,0 +1,12 @@
+# Extra dependencies for the RoBERTa reference baseline
+# (Referencni-C5-RoBERTa.ipynb only).
+#
+# These are large (PyTorch is ~2 GB) and may not yet ship wheels for the
+# newest Python releases. Install into the same virtualenv when you need
+# that notebook:
+#
+#   pip install -r requirements-roberta.txt
+
+torch>=2.2
+transformers>=4.40
+datasets>=2.19
