@@ -1,0 +1,14 @@
+{
+  "feature_columns": [
+    "narrative_coherence",
+    "uncertainty_markers",
+    "action_verb_tense_consistency",
+    "entity_specificity_level",
+    "self_referential_metacommentary",
+    "spatial_organization_pattern",
+    "emotional_interpretation_inference",
+    "lexical_variation_and_repetition",
+    "quantification_precision",
+    "discourse_marker_usage"
+  ]
+}

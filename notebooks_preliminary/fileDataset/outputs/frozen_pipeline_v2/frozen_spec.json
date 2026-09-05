@@ -1,0 +1,167 @@
+{
+  "created_utc": "2026-09-04T09:22:17+00:00",
+  "sklearn_version": "1.9.0",
+  "prompt_sha256_16": "f52aae5d939d620e",
+  "prompt_sha256_assert": "f52aae5d939d620e",
+  "models": {
+    "A": "qwen3.5:122b",
+    "B": "qwen3.6-35b"
+  },
+  "test_extraction_model": "qwen3.5:122b",
+  "model_artifact": "pipe_v2_stable_surface.joblib",
+  "deprecated_artifacts": {
+    "pipe_v2_rates_surface_deprecated.joblib": "superseded by pipe_v2_stable_surface.joblib: carried features flagged unstable in Block 7/8 (specific_verb_ratio rho=0.44, n_generic_verb_r100 rho=0.34)"
+  },
+  "llm_params": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "stream": true,
+    "think": false
+  },
+  "gates": {
+    "zero_share_max": 0.7,
+    "stability_min_rho": 0.6
+  },
+  "dropped_degenerate": [
+    "n_entities"
+  ],
+  "unstable_features": [
+    "n_entities",
+    "n_generic_verb",
+    "specific_verb_ratio"
+  ],
+  "feature_sets": {
+    "V2_RATES": [
+      "n_specific_verb_r100",
+      "n_generic_verb_r100",
+      "n_locative_r100",
+      "n_hedge_r100",
+      "n_deictic_r100",
+      "n_metacomment_r100",
+      "n_diminutive_r100",
+      "n_quantity_r100",
+      "n_proposition_r100",
+      "n_selfcorrect_r100",
+      "n_region_r100",
+      "n_repeated_lemma_r100",
+      "repeat_mass_r100",
+      "specific_verb_ratio",
+      "region_breadth"
+    ],
+    "V2_STABLE": [
+      "n_specific_verb_r100",
+      "n_locative_r100",
+      "n_hedge_r100",
+      "n_deictic_r100",
+      "n_metacomment_r100",
+      "n_diminutive_r100",
+      "n_quantity_r100",
+      "n_proposition_r100",
+      "n_selfcorrect_r100",
+      "n_region_r100",
+      "n_repeated_lemma_r100",
+      "repeat_mass_r100",
+      "region_breadth"
+    ],
+    "SURFACE": [
+      "n_word",
+      "n_type",
+      "ttr",
+      "n_sent",
+      "mlu",
+      "n_comma",
+      "n_char"
+    ],
+    "frozen_primary": [
+      "n_specific_verb_r100",
+      "n_locative_r100",
+      "n_hedge_r100",
+      "n_deictic_r100",
+      "n_metacomment_r100",
+      "n_diminutive_r100",
+      "n_quantity_r100",
+      "n_proposition_r100",
+      "n_selfcorrect_r100",
+      "n_region_r100",
+      "n_repeated_lemma_r100",
+      "repeat_mass_r100",
+      "region_breadth",
+      "n_word",
+      "n_type",
+      "ttr",
+      "n_sent",
+      "mlu",
+      "n_comma",
+      "n_char"
+    ]
+  },
+  "cv_protocol": {
+    "scheme": "repeated stratified k-fold",
+    "repeats": 10,
+    "folds": 5,
+    "seed": 42,
+    "metric": "roc_auc",
+    "ci": "2000x subject bootstrap"
+  },
+  "classifiers": {
+    "primary": "LogisticRegressionCV(penalty=elasticnet, solver=saga, l1_ratios=[.3,.6,.9], Cs=8, class_weight=balanced), StandardScaler",
+    "robustness": [
+      "LogisticRegression(l2, class_weight=balanced)",
+      "CalibratedClassifierCV(LinearSVC(class_weight=balanced))"
+    ]
+  },
+  "stability_summary": {
+    "docs_compared": 327,
+    "median_spearman_counts": 0.684377412081054,
+    "n_stable_count_ratio": 13,
+    "n_total_count_ratio": 16
+  },
+  "frozen_primary_cv_auc": 0.8058479532163743,
+  "paired_bootstrap": {
+    "frozen_primary_vs_surface": {
+      "contrast": "V2_STABLE + surface (enet)  vs  surface alone (enet)",
+      "n_resamples": 2000,
+      "delta_auc": 0.06343387500586657,
+      "ci95": [
+        0.006470110667049964,
+        0.11973858587914607
+      ],
+      "p_delta_le_0": 0.016
+    },
+    "rates_surface_vs_surface": {
+      "contrast": "V2_RATES + surface (enet)  vs  surface alone (enet)  [un-gated feature set]",
+      "n_resamples": 2000,
+      "delta_auc": 0.06270756254562297,
+      "ci95": [
+        0.00571565399947406,
+        0.11831184698348497
+      ],
+      "p_delta_le_0": 0.017
+    }
+  },
+  "comparison_auc": "{('Transcript length', 'enet'): 0.6923, ('Surface stats', 'enet'): 0.7428, ('V1 categorical', 'enet'): 0.6928, ('V2 stable + surface (frozen primary)', 'enet'): 0.8058, ('TF-IDF char 3-5gram (ceiling)', 'l2'): 0.8673, ('V2 rates', 'enet'): 0.7679, ('V2 counts+rates', 'enet'): 0.7952, ('V2 stable-only', 'enet'): 0.7755, ('V2 rates + surface', 'enet'): 0.8053, ('Surface stats', 'l2'): 0.7419, ('V2 stable + surface (frozen primary)', 'l2'): 0.7891, ('Surface stats', 'svm'): 0.749, ('V2 stable + surface (frozen primary)', 'svm'): 0.7871}",
+  "test_set_used": true,
+  "test_set_used_utc": "2026-09-04T09:29:22+00:00",
+  "test_results": {
+    "n_test": 61,
+    "model_artifact": "pipe_v2_stable_surface.joblib",
+    "primary_auc": 0.8070175438596491,
+    "primary_ci95": [
+      0.6768258298184486,
+      0.9159444807671352
+    ],
+    "primary_bal_acc": 0.7086466165413534,
+    "primary_macro_f1": 0.7024390243902439,
+    "surface_auc": 0.7957393483709272,
+    "paired_bootstrap": {
+      "contrast": "V2_STABLE+surface (frozen primary) vs surface (frozen baseline)",
+      "n_resamples": 2000,
+      "delta_auc": 0.010868749902426799,
+      "ci95": [
+        -0.10337936046511631,
+        0.12403998865570057
+      ],
+      "p_delta_le_0": 0.4215
+    }
+  }
+}

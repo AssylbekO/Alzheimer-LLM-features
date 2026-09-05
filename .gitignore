@@ -26,23 +26,29 @@ dist/
 profile_default/
 ipython_config.py
 
-# --- Generated data / results ---
-# Extracted copies of the tracked dataset archives (fileDataset.zip)
+# --- Raw DigiDiaDem transcripts: never commit the extracted dataset itself ---
+# (fileDataset.zip is no longer tracked either -- get the corpus separately)
 /overview/
 /train/
 /test/
 /fileDataset/
-notebooks_preliminary/fileDataset/
+notebooks_preliminary/fileDataset/train/
+notebooks_preliminary/fileDataset/test/
+notebooks_preliminary/fileDataset/overview/
 notebooks_preliminary/overview/
 notebooks_preliminary/train/
 notebooks_preliminary/test/
 
-# Notebook run outputs (OutputsQwen/ is kept: it is committed input data)
-outputs/
-*/outputs/
-llmlite_quickstart_results.csv
-v2_raw.jsonl
-run_metadata.json
+# --- Sealed 61-case test set: never track, no matter what else below is pushed ---
+# (the disclosed test RESULT -- AUC/CI, no transcript text -- lives in frozen_spec.json,
+# which IS tracked below; these two files are the actual extracted test-set content)
+notebooks_preliminary/fileDataset/outputs/v2_test_raw.jsonl
+notebooks_preliminary/fileDataset/outputs/v2_test_run_metadata.json
+
+# Notebook run outputs (CSVs / PNGs / frozen pipeline artifacts / raw extractions) ARE
+# tracked. This repo is public: corpus.csv, v2_raw.jsonl and v2b_raw.jsonl contain
+# verbatim DigiDiaDem transcript text (train/overview only, never test/) -- a deliberate
+# choice made 2026-09-04, not an oversight. Revisit if the corpus license doesn't permit it.
 
 # --- OS / editor cruft ---
 .DS_Store
