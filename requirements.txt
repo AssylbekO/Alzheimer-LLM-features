@@ -8,6 +8,7 @@
 llm-feature-gen>=0.1.13
 openai>=1.0.0
 python-dotenv>=1.0.0
+shap>=0.42.0
 
 pandas>=2.0
 numpy>=1.26

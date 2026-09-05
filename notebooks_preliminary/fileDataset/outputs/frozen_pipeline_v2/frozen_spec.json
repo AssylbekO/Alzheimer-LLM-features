@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-04T09:22:17+00:00",
+  "created_utc": "2026-09-05T12:28:26+00:00",
   "sklearn_version": "1.9.0",
   "prompt_sha256_16": "f52aae5d939d620e",
   "prompt_sha256_assert": "f52aae5d939d620e",
@@ -121,9 +121,9 @@
     "frozen_primary_vs_surface": {
       "contrast": "V2_STABLE + surface (enet)  vs  surface alone (enet)",
       "n_resamples": 2000,
-      "delta_auc": 0.06343387500586657,
+      "delta_auc": 0.06343072097013709,
       "ci95": [
-        0.006470110667049964,
+        0.006526370263131348,
         0.11973858587914607
       ],
       "p_delta_le_0": 0.016
@@ -131,15 +131,15 @@
     "rates_surface_vs_surface": {
       "contrast": "V2_RATES + surface (enet)  vs  surface alone (enet)  [un-gated feature set]",
       "n_resamples": 2000,
-      "delta_auc": 0.06270756254562297,
+      "delta_auc": 0.06270440850989349,
       "ci95": [
-        0.00571565399947406,
-        0.11831184698348497
+        0.005659999732698965,
+        0.11830342096393665
       ],
       "p_delta_le_0": 0.017
     }
   },
-  "comparison_auc": "{('Transcript length', 'enet'): 0.6923, ('Surface stats', 'enet'): 0.7428, ('V1 categorical', 'enet'): 0.6928, ('V2 stable + surface (frozen primary)', 'enet'): 0.8058, ('TF-IDF char 3-5gram (ceiling)', 'l2'): 0.8673, ('V2 rates', 'enet'): 0.7679, ('V2 counts+rates', 'enet'): 0.7952, ('V2 stable-only', 'enet'): 0.7755, ('V2 rates + surface', 'enet'): 0.8053, ('Surface stats', 'l2'): 0.7419, ('V2 stable + surface (frozen primary)', 'l2'): 0.7891, ('Surface stats', 'svm'): 0.749, ('V2 stable + surface (frozen primary)', 'svm'): 0.7871}",
+  "comparison_auc": "{('Transcript length', 'enet'): 0.6939, ('Surface stats', 'enet'): 0.7428, ('V1 categorical', 'enet'): 0.6928, ('V2 stable + surface (frozen primary)', 'enet'): 0.8058, ('TF-IDF char 3-5gram (ceiling)', 'l2'): 0.8673, ('V2 rates', 'enet'): 0.7679, ('V2 counts+rates', 'enet'): 0.7952, ('V2 stable-only', 'enet'): 0.7754, ('V2 rates + surface', 'enet'): 0.8053, ('Surface stats', 'l2'): 0.7419, ('V2 stable + surface (frozen primary)', 'l2'): 0.7891, ('Surface stats', 'svm'): 0.749, ('V2 stable + surface (frozen primary)', 'svm'): 0.7871}",
   "test_set_used": true,
   "test_set_used_utc": "2026-09-04T09:29:22+00:00",
   "test_results": {
