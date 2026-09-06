@@ -141,7 +141,7 @@
   },
   "comparison_auc": "{('Transcript length', 'enet'): 0.6939, ('Surface stats', 'enet'): 0.7428, ('V1 categorical', 'enet'): 0.6928, ('V2 stable + surface (frozen primary)', 'enet'): 0.8058, ('TF-IDF char 3-5gram (ceiling)', 'l2'): 0.8673, ('V2 rates', 'enet'): 0.7679, ('V2 counts+rates', 'enet'): 0.7952, ('V2 stable-only', 'enet'): 0.7754, ('V2 rates + surface', 'enet'): 0.8053, ('Surface stats', 'l2'): 0.7419, ('V2 stable + surface (frozen primary)', 'l2'): 0.7891, ('Surface stats', 'svm'): 0.749, ('V2 stable + surface (frozen primary)', 'svm'): 0.7871}",
   "test_set_used": true,
-  "test_set_used_utc": "2026-09-04T09:29:22+00:00",
+  "test_set_used_utc": "2026-09-06T15:36:29+00:00",
   "test_results": {
     "n_test": 61,
     "model_artifact": "pipe_v2_stable_surface.joblib",
