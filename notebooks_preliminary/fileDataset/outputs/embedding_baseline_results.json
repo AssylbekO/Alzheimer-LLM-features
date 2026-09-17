@@ -1,0 +1,286 @@
+{
+  "created_utc": "2026-09-17T12:47:21+00:00",
+  "run_finetune": false,
+  "device": "mps",
+  "protocol": {
+    "n_train": 241,
+    "n_test": 61,
+    "n_repeats": 10,
+    "n_splits": 5,
+    "seed": 42,
+    "n_bootstrap": 2000
+  },
+  "finetune_protocol": null,
+  "unmatched_reference": [
+    {
+      "model": "C5-FERNET",
+      "hf_checkpoint": "fav-kky/FERNET-C5-RoBERTa",
+      "original_test_auc": 0.744
+    },
+    {
+      "model": "RobeCzech",
+      "hf_checkpoint": "ufal/robeczech-base",
+      "original_test_auc": 0.836
+    },
+    {
+      "model": "CZERT-B",
+      "hf_checkpoint": "UWB-AIR/Czert-B-base-cased",
+      "original_test_auc": 0.822
+    },
+    {
+      "model": "mBERT",
+      "hf_checkpoint": "google-bert/bert-base-multilingual-cased",
+      "original_test_auc": 0.798
+    },
+    {
+      "model": "Small-E-Czech",
+      "hf_checkpoint": "Seznam/small-e-czech",
+      "original_test_auc": 0.782
+    }
+  ],
+  "table1": [
+    {
+      "representation": "Transcript length",
+      "type": "surface",
+      "cv_auc": 0.6939014202172097,
+      "cv_ci": "[0.618, 0.766]",
+      "test_auc": NaN,
+      "test_ci": "\u2014"
+    },
+    {
+      "representation": "Surface stats",
+      "type": "surface",
+      "cv_auc": 0.7427736006683375,
+      "cv_ci": "[0.673, 0.803]",
+      "test_auc": 0.7957393483709272,
+      "test_ci": "[0.659, 0.909]"
+    },
+    {
+      "representation": "V1 categorical",
+      "type": "LLM",
+      "cv_auc": 0.6928153717627401,
+      "cv_ci": "[0.617, 0.766]",
+      "test_auc": NaN,
+      "test_ci": "\u2014"
+    },
+    {
+      "representation": "V2 stable+surface",
+      "type": "LLM",
+      "cv_auc": 0.8058479532163743,
+      "cv_ci": "[0.739, 0.867]",
+      "test_auc": 0.8070175438596491,
+      "test_ci": "[0.677, 0.916]"
+    },
+    {
+      "representation": "TF-IDF char 3-5-gram",
+      "type": "lexical",
+      "cv_auc": 0.8673350041771094,
+      "cv_ci": "[0.816, 0.912]",
+      "test_auc": NaN,
+      "test_ci": "\u2014"
+    },
+    {
+      "representation": "C5-FERNET (frozen)",
+      "type": "embedding",
+      "cv_auc": 0.748203842940685,
+      "cv_ci": "[0.676, 0.813]",
+      "test_auc": 0.6691729323308271,
+      "test_ci": "[0.516, 0.812]"
+    },
+    {
+      "representation": "RobeCzech (frozen)",
+      "type": "embedding",
+      "cv_auc": 0.8176274018379281,
+      "cv_ci": "[0.747, 0.877]",
+      "test_auc": 0.8646616541353382,
+      "test_ci": "[0.735, 0.970]"
+    },
+    {
+      "representation": "CZERT-B (frozen)",
+      "type": "embedding",
+      "cv_auc": 0.8156223893065998,
+      "cv_ci": "[0.749, 0.875]",
+      "test_auc": 0.8295739348370929,
+      "test_ci": "[0.682, 0.953]"
+    },
+    {
+      "representation": "mBERT (frozen)",
+      "type": "embedding",
+      "cv_auc": 0.7848788638262322,
+      "cv_ci": "[0.714, 0.846]",
+      "test_auc": 0.731829573934837,
+      "test_ci": "[0.571, 0.875]"
+    },
+    {
+      "representation": "Small-E-Czech (frozen)",
+      "type": "embedding",
+      "cv_auc": 0.8065162907268169,
+      "cv_ci": "[0.739, 0.866]",
+      "test_auc": 0.87468671679198,
+      "test_ci": "[0.755, 0.970]"
+    }
+  ],
+  "table2": [
+    {
+      "contrast": "C5-FERNET (frozen) vs surface stats",
+      "delta_auc": 0.005125462090617624,
+      "ci_low": -0.06372741252259695,
+      "ci_high": 0.0765848777172565,
+      "p_delta_le_0": 0.45
+    },
+    {
+      "contrast": "C5-FERNET (frozen) vs V2 frozen primary",
+      "delta_auc": -0.05839197357765915,
+      "ci_low": -0.1270790770319799,
+      "ci_high": 0.011760899806575152,
+      "p_delta_le_0": 0.9495
+    },
+    {
+      "contrast": "RobeCzech (frozen) vs surface stats",
+      "delta_auc": 0.07554476674427947,
+      "ci_low": 0.00409512495685938,
+      "ci_high": 0.1439201636309729,
+      "p_delta_le_0": 0.0185
+    },
+    {
+      "contrast": "RobeCzech (frozen) vs V2 frozen primary",
+      "delta_auc": 0.012027331076002692,
+      "ci_low": -0.0524407740686391,
+      "ci_high": 0.07737643218975522,
+      "p_delta_le_0": 0.358
+    },
+    {
+      "contrast": "CZERT-B (frozen) vs surface stats",
+      "delta_auc": 0.07279772116138966,
+      "ci_low": 0.003903533283656154,
+      "ci_high": 0.1446998610499668,
+      "p_delta_le_0": 0.0215
+    },
+    {
+      "contrast": "CZERT-B (frozen) vs V2 frozen primary",
+      "delta_auc": 0.009280285493112899,
+      "ci_low": -0.04871654346757913,
+      "ci_high": 0.06744496746810531,
+      "p_delta_le_0": 0.381
+    },
+    {
+      "contrast": "mBERT (frozen) vs surface stats",
+      "delta_auc": 0.042486788451159184,
+      "ci_low": -0.03148360107095054,
+      "ci_high": 0.1111913366524502,
+      "p_delta_le_0": 0.1165
+    },
+    {
+      "contrast": "mBERT (frozen) vs V2 frozen primary",
+      "delta_auc": -0.021030647217117587,
+      "ci_low": -0.08036479004018451,
+      "ci_high": 0.03715340123957622,
+      "p_delta_le_0": 0.761
+    },
+    {
+      "contrast": "Small-E-Czech (frozen) vs surface stats",
+      "delta_auc": 0.06450782357423344,
+      "ci_low": -0.004025336315095998,
+      "ci_high": 0.12904677352155455,
+      "p_delta_le_0": 0.0325
+    },
+    {
+      "contrast": "Small-E-Czech (frozen) vs V2 frozen primary",
+      "delta_auc": 0.0009903879059566783,
+      "ci_low": -0.05395793477442195,
+      "ci_high": 0.05552905522939767,
+      "p_delta_le_0": 0.4795
+    },
+    {
+      "contrast": "RobeCzech (frozen) (best frozen) vs TF-IDF char 3-5-gram",
+      "delta_auc": -0.049504338407505684,
+      "ci_low": -0.09730581246710276,
+      "ci_high": -0.005132381875801995,
+      "p_delta_le_0": 0.986
+    },
+    {
+      "contrast": "C5-FERNET (frozen) vs V2 frozen primary (test)",
+      "delta_auc": -0.13599834110947304,
+      "ci_low": -0.2752195478939665,
+      "ci_high": 0.003505990133897106,
+      "p_delta_le_0": 0.972
+    },
+    {
+      "contrast": "C5-FERNET (frozen) vs surface (test)",
+      "delta_auc": -0.12512959120704625,
+      "ci_low": -0.2583631106827786,
+      "ci_high": -0.0012515664160400843,
+      "p_delta_le_0": 0.977
+    },
+    {
+      "contrast": "RobeCzech (frozen) vs V2 frozen primary (test)",
+      "delta_auc": 0.0568624249396159,
+      "ci_low": -0.05361419068736138,
+      "ci_high": 0.17780748663101598,
+      "p_delta_le_0": 0.153
+    },
+    {
+      "contrast": "RobeCzech (frozen) vs surface (test)",
+      "delta_auc": 0.06773117484204269,
+      "ci_low": -0.015282738095238044,
+      "ci_high": 0.16249999999999998,
+      "p_delta_le_0": 0.0675
+    },
+    {
+      "contrast": "CZERT-B (frozen) vs V2 frozen primary (test)",
+      "delta_auc": 0.021206154718126938,
+      "ci_low": -0.08903644982020259,
+      "ci_high": 0.12340107808857807,
+      "p_delta_le_0": 0.327
+    },
+    {
+      "contrast": "CZERT-B (frozen) vs surface (test)",
+      "delta_auc": 0.03207490462055374,
+      "ci_low": -0.06311206004140775,
+      "ci_high": 0.14038327989818766,
+      "p_delta_le_0": 0.274
+    },
+    {
+      "contrast": "mBERT (frozen) vs V2 frozen primary (test)",
+      "delta_auc": -0.0755918890498846,
+      "ci_low": -0.20802471604543277,
+      "ci_high": 0.05040995825879532,
+      "p_delta_le_0": 0.857
+    },
+    {
+      "contrast": "mBERT (frozen) vs surface (test)",
+      "delta_auc": -0.0647231391474578,
+      "ci_low": -0.18933045930042497,
+      "ci_high": 0.057147212543554,
+      "p_delta_le_0": 0.855
+    },
+    {
+      "contrast": "Small-E-Czech (frozen) vs V2 frozen primary (test)",
+      "delta_auc": 0.06668445500561168,
+      "ci_low": -0.03814536340852128,
+      "ci_high": 0.17385705057216652,
+      "p_delta_le_0": 0.0965
+    },
+    {
+      "contrast": "Small-E-Czech (frozen) vs surface (test)",
+      "delta_auc": 0.07755320490803846,
+      "ci_low": -0.017783783783783792,
+      "ci_high": 0.19166666666666665,
+      "p_delta_le_0": 0.064
+    }
+  ],
+  "reproduction_check": {
+    "surf": {
+      "reproduced_auc": 0.7426900584795322,
+      "recorded_auc": 0.7427736006683375
+    },
+    "v2fp": {
+      "reproduced_auc": 0.8058479532163743,
+      "recorded_auc": 0.8058479532163743
+    },
+    "tfidf": {
+      "reproduced_auc": 0.8673350041771094,
+      "recorded_auc": 0.8673350041771094
+    }
+  }
+}
