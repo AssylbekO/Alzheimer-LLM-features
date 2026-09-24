@@ -1,6 +1,6 @@
 {
-  "created_utc": "2026-09-24T21:18:45+00:00",
-  "run_finetune": false,
+  "created_utc": "2026-09-24T21:49:04+00:00",
+  "run_finetune": true,
   "device": "cuda",
   "protocol": {
     "n_train": 241,
@@ -10,7 +10,14 @@
     "seed": 42,
     "n_bootstrap": 2000
   },
-  "finetune_protocol": null,
+  "finetune_protocol": {
+    "note": "deliberately lighter than the matched 10x5 protocol above -- see Block 7",
+    "n_repeats": 1,
+    "n_splits": 5,
+    "seed": 42,
+    "n_train": 241,
+    "n_test": 61
+  },
   "unmatched_reference": [
     {
       "model": "C5-FERNET",
@@ -118,6 +125,46 @@
       "cv_ci": "[0.739, 0.866]",
       "test_auc": 0.87468671679198,
       "test_ci": "[0.755, 0.970]"
+    },
+    {
+      "representation": "C5-FERNET (fine-tuned, 1x5-fold CV)",
+      "type": "embedding-finetuned",
+      "cv_auc": 0.7852965747702589,
+      "cv_ci": "[0.715, 0.848]",
+      "test_auc": 0.7305764411027569,
+      "test_ci": "[0.564, 0.888]"
+    },
+    {
+      "representation": "RobeCzech (fine-tuned, 1x5-fold CV)",
+      "type": "embedding-finetuned",
+      "cv_auc": 0.7761904761904762,
+      "cv_ci": "[0.704, 0.841]",
+      "test_auc": 0.8308270676691729,
+      "test_ci": "[0.690, 0.951]"
+    },
+    {
+      "representation": "CZERT-B (fine-tuned, 1x5-fold CV)",
+      "type": "embedding-finetuned",
+      "cv_auc": 0.8006683375104428,
+      "cv_ci": "[0.730, 0.863]",
+      "test_auc": 0.8070175438596491,
+      "test_ci": "[0.652, 0.939]"
+    },
+    {
+      "representation": "mBERT (fine-tuned, 1x5-fold CV)",
+      "type": "embedding-finetuned",
+      "cv_auc": 0.7913951545530493,
+      "cv_ci": "[0.719, 0.853]",
+      "test_auc": 0.849624060150376,
+      "test_ci": "[0.729, 0.955]"
+    },
+    {
+      "representation": "Small-E-Czech (fine-tuned, 1x5-fold CV)",
+      "type": "embedding-finetuned",
+      "cv_auc": 0.7527986633249789,
+      "cv_ci": "[0.674, 0.825]",
+      "test_auc": 0.7406015037593985,
+      "test_ci": "[0.579, 0.889]"
     }
   ],
   "table2": [
@@ -199,6 +246,76 @@
       "p_delta_le_0": 0.986
     },
     {
+      "contrast": "C5-FERNET (fine-tuned, 1x5-fold CV) vs surface stats",
+      "delta_auc": 0.043154969540754595,
+      "ci_low": -0.023589960627014298,
+      "ci_high": 0.11336793703165889,
+      "p_delta_le_0": 0.111
+    },
+    {
+      "contrast": "C5-FERNET (fine-tuned, 1x5-fold CV) vs V2 frozen primary",
+      "delta_auc": -0.020362466127522186,
+      "ci_low": -0.07881057203445632,
+      "ci_high": 0.0419090574725821,
+      "p_delta_le_0": 0.7375
+    },
+    {
+      "contrast": "RobeCzech (fine-tuned, 1x5-fold CV) vs surface stats",
+      "delta_auc": 0.03460491167586935,
+      "ci_low": -0.04202380952380954,
+      "ci_high": 0.11111796271081348,
+      "p_delta_le_0": 0.1835
+    },
+    {
+      "contrast": "RobeCzech (fine-tuned, 1x5-fold CV) vs V2 frozen primary",
+      "delta_auc": -0.02891252399240743,
+      "ci_low": -0.09641747864097443,
+      "ci_high": 0.038384784075573504,
+      "p_delta_le_0": 0.804
+    },
+    {
+      "contrast": "CZERT-B (fine-tuned, 1x5-fold CV) vs surface stats",
+      "delta_auc": 0.058489021654304765,
+      "ci_low": -0.008383377689378151,
+      "ci_high": 0.12560000009080963,
+      "p_delta_le_0": 0.0455
+    },
+    {
+      "contrast": "CZERT-B (fine-tuned, 1x5-fold CV) vs V2 frozen primary",
+      "delta_auc": -0.0050284140139720095,
+      "ci_low": -0.05883980362243485,
+      "ci_high": 0.0497333020969143,
+      "p_delta_le_0": 0.5835
+    },
+    {
+      "contrast": "mBERT (fine-tuned, 1x5-fold CV) vs surface stats",
+      "delta_auc": 0.04857328681756972,
+      "ci_low": -0.025230316936540632,
+      "ci_high": 0.12345654193263325,
+      "p_delta_le_0": 0.0995
+    },
+    {
+      "contrast": "mBERT (fine-tuned, 1x5-fold CV) vs V2 frozen primary",
+      "delta_auc": -0.014944148850707056,
+      "ci_low": -0.08170326844428065,
+      "ci_high": 0.05312068801850774,
+      "p_delta_le_0": 0.666
+    },
+    {
+      "contrast": "Small-E-Czech (fine-tuned, 1x5-fold CV) vs surface stats",
+      "delta_auc": 0.010699399394460973,
+      "ci_low": -0.06287385305739734,
+      "ci_high": 0.08557752522977116,
+      "p_delta_le_0": 0.3855
+    },
+    {
+      "contrast": "Small-E-Czech (fine-tuned, 1x5-fold CV) vs V2 frozen primary",
+      "delta_auc": -0.05281803627381581,
+      "ci_low": -0.11161677964060795,
+      "ci_high": 0.005466562398325767,
+      "p_delta_le_0": 0.9635
+    },
+    {
       "contrast": "C5-FERNET (frozen) vs V2 frozen primary (test)",
       "delta_auc": -0.13599834110947304,
       "ci_low": -0.2752195478939665,
@@ -267,6 +384,76 @@
       "ci_low": -0.017783783783783792,
       "ci_high": 0.19166666666666665,
       "p_delta_le_0": 0.064
+    },
+    {
+      "contrast": "C5-FERNET (fine-tuned, 1x5-fold CV) vs V2 frozen primary (test)",
+      "delta_auc": -0.0763590248161972,
+      "ci_low": -0.20721992947376583,
+      "ci_high": 0.05011655011655014,
+      "p_delta_le_0": 0.8835
+    },
+    {
+      "contrast": "C5-FERNET (fine-tuned, 1x5-fold CV) vs surface (test)",
+      "delta_auc": -0.0654902749137704,
+      "ci_low": -0.18224999999999994,
+      "ci_high": 0.05215500594177055,
+      "p_delta_le_0": 0.858
+    },
+    {
+      "contrast": "RobeCzech (fine-tuned, 1x5-fold CV) vs V2 frozen primary (test)",
+      "delta_auc": 0.02232234789715693,
+      "ci_low": -0.0839965497667323,
+      "ci_high": 0.13538750441852224,
+      "p_delta_le_0": 0.352
+    },
+    {
+      "contrast": "RobeCzech (fine-tuned, 1x5-fold CV) vs surface (test)",
+      "delta_auc": 0.033191097799583735,
+      "ci_low": -0.054797979797979776,
+      "ci_high": 0.11889285714285705,
+      "p_delta_le_0": 0.2185
+    },
+    {
+      "contrast": "CZERT-B (fine-tuned, 1x5-fold CV) vs V2 frozen primary (test)",
+      "delta_auc": -0.00022156329022347105,
+      "ci_low": -0.125015243902439,
+      "ci_high": 0.12013049934561569,
+      "p_delta_le_0": 0.503
+    },
+    {
+      "contrast": "CZERT-B (fine-tuned, 1x5-fold CV) vs surface (test)",
+      "delta_auc": 0.010647186612203331,
+      "ci_low": -0.0680587121212121,
+      "ci_high": 0.08811846689895449,
+      "p_delta_le_0": 0.3895
+    },
+    {
+      "contrast": "mBERT (fine-tuned, 1x5-fold CV) vs V2 frozen primary (test)",
+      "delta_auc": 0.04227983129427784,
+      "ci_low": -0.059422877846790845,
+      "ci_high": 0.15642272459222906,
+      "p_delta_le_0": 0.2175
+    },
+    {
+      "contrast": "mBERT (fine-tuned, 1x5-fold CV) vs surface (test)",
+      "delta_auc": 0.05314858119670465,
+      "ci_low": -0.027246390577507613,
+      "ci_high": 0.14598567497174306,
+      "p_delta_le_0": 0.103
+    },
+    {
+      "contrast": "Small-E-Czech (fine-tuned, 1x5-fold CV) vs V2 frozen primary (test)",
+      "delta_auc": -0.0673687602965933,
+      "ci_low": -0.19386512180629828,
+      "ci_high": 0.058357007311491835,
+      "p_delta_le_0": 0.848
+    },
+    {
+      "contrast": "Small-E-Czech (fine-tuned, 1x5-fold CV) vs surface (test)",
+      "delta_auc": -0.056500010394166494,
+      "ci_low": -0.1619151138716356,
+      "ci_high": 0.045480972515856054,
+      "p_delta_le_0": 0.861
     }
   ],
   "reproduction_check": {
