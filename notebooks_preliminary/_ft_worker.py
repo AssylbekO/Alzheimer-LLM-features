@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 import torch
 from transformers import (AutoTokenizer, AutoModelForSequenceClassification,
-                          get_linear_schedule_with_warmup)
+                          get_linear_schedule_with_warmup, set_seed)
 from torch.utils.data import TensorDataset, DataLoader
 from torch.optim import AdamW
 from sklearn.model_selection import train_test_split, StratifiedKFold
@@ -90,6 +90,9 @@ def finetune_predict(hf_name, train_texts, train_labels, predict_texts, seed, de
     """Fine-tune fresh on (train_texts, train_labels) with an 80/20 fold-internal val
     split for early stopping, then predict_proba on predict_texts. predict_texts labels
     are never seen -- neither for training nor for model selection."""
+    # seeds python/numpy/torch (+CUDA) before the model is built, so the randomly
+    # initialised classification head and dropout masks are identical across re-runs.
+    set_seed(seed)
     tr_idx, va_idx = train_test_split(np.arange(len(train_texts)), test_size=FT_VAL_FRACTION,
                                       random_state=seed, stratify=train_labels)
     tok = AutoTokenizer.from_pretrained(hf_name)
@@ -146,6 +149,9 @@ def main():
 
     device = torch.device("cuda" if torch.cuda.is_available() else
                           ("mps" if torch.backends.mps.is_available() else "cpu"))
+    # pin cuDNN to deterministic kernels (no-op on MPS/CPU); costs a little speed.
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
     print(f"[{key}] device={device}  hf={hf_name}  protocol={FT_N_REPEATS}x{FT_N_SPLITS}-fold CV",
           flush=True)
 

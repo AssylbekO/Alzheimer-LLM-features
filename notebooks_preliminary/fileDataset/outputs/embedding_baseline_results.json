@@ -1,7 +1,7 @@
 {
-  "created_utc": "2026-09-17T12:47:21+00:00",
+  "created_utc": "2026-09-24T21:18:45+00:00",
   "run_finetune": false,
-  "device": "mps",
+  "device": "cuda",
   "protocol": {
     "n_train": 241,
     "n_test": 61,
@@ -82,8 +82,8 @@
     {
       "representation": "C5-FERNET (frozen)",
       "type": "embedding",
-      "cv_auc": 0.748203842940685,
-      "cv_ci": "[0.676, 0.813]",
+      "cv_auc": 0.7472848788638262,
+      "cv_ci": "[0.675, 0.812]",
       "test_auc": 0.6691729323308271,
       "test_ci": "[0.516, 0.812]"
     },
@@ -123,17 +123,17 @@
   "table2": [
     {
       "contrast": "C5-FERNET (frozen) vs surface stats",
-      "delta_auc": 0.005125462090617624,
-      "ci_low": -0.06372741252259695,
-      "ci_high": 0.0765848777172565,
-      "p_delta_le_0": 0.45
+      "delta_auc": 0.004182411798120026,
+      "ci_low": -0.06434848484848481,
+      "ci_high": 0.07552597473148319,
+      "p_delta_le_0": 0.4645
     },
     {
       "contrast": "C5-FERNET (frozen) vs V2 frozen primary",
-      "delta_auc": -0.05839197357765915,
-      "ci_low": -0.1270790770319799,
-      "ci_high": 0.011760899806575152,
-      "p_delta_le_0": 0.9495
+      "delta_auc": -0.059335023870156746,
+      "ci_low": -0.12817209748083241,
+      "ci_high": 0.012350558639152194,
+      "p_delta_le_0": 0.952
     },
     {
       "contrast": "RobeCzech (frozen) vs surface stats",
@@ -151,14 +151,14 @@
     },
     {
       "contrast": "CZERT-B (frozen) vs surface stats",
-      "delta_auc": 0.07279772116138966,
+      "delta_auc": 0.07279772116138968,
       "ci_low": 0.003903533283656154,
-      "ci_high": 0.1446998610499668,
+      "ci_high": 0.1446998610499669,
       "p_delta_le_0": 0.0215
     },
     {
       "contrast": "CZERT-B (frozen) vs V2 frozen primary",
-      "delta_auc": 0.009280285493112899,
+      "delta_auc": 0.009280285493112902,
       "ci_low": -0.04871654346757913,
       "ci_high": 0.06744496746810531,
       "p_delta_le_0": 0.381
